@@ -1,0 +1,26 @@
+targetted_decisions = {
+
+    show_civil_war_status = {
+
+        from_potential = {
+            ai = no
+        }
+
+        potential = {
+            in_revolt = yes
+            liege = { character = PREV }  # independent-ish
+        }
+
+        allow = {
+            ff_is_fracturing_attacker_trigger = yes
+            #has_character_modifier = in_civil_war_modifier
+        }
+
+        effect = {
+            # No effect needed!
+            # Localization of the decision description already showed what we wanted to show!
+            # TODO: event window showing the mod's rules in detail?
+        }
+    }
+
+}
