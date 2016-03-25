@@ -192,9 +192,9 @@ character_event = {
         random_realm_province = {
             limit = {
                 owner = {
-                    OR = {
+                    NAND = {
                         ai = no
-                        capital_scope = { NOT = { province = PREVPREV } }
+                        capital_scope = { province = PREVPREV }
                     }
                 }
             }
