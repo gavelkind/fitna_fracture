@@ -309,7 +309,6 @@ character_event = {
             if = {
                 limit = {
                     event_target:defender = { tier = KING }
-                    lower_real_tier_than = KING
                 }
                 primary_title = {
                     save_event_target_as = coa_base
@@ -328,19 +327,19 @@ character_event = {
                             copy_title_laws = yes  # e.g. copy England's laws
                             name = FF_SPLIT_TITLE  # e.g. "Yorkist England"
                         }
-                    }
-                }
-                primary_title = {
-                    # TODO: do something better about coa in the rare case that coa_base is a mere barony
-                    set_coa = event_target:coa_base
-                    set_title_flag = fitna_fracture_can_be_merged
-                    save_event_target_as = new_title
-                    if = {
-                        limit = { is_variable_equal = { which = "cb_is_powerful_vassal_takeover_war"  value = 1 } }
-                        add_law_w_cooldown = law_voting_power_1
-                        add_law_w_cooldown = war_voting_power_1
-                        add_law_w_cooldown = succession_voting_power_1
-                        add_law_w_cooldown = succ_feudal_elective
+                        new_title = {
+                            # TODO: do something better about coa in the rare case that coa_base is a mere barony
+                            set_coa = event_target:coa_base
+                            set_title_flag = fitna_fracture_can_be_merged
+                            save_event_target_as = created_title
+                            if = {
+                                limit = { is_variable_equal = { which = "cb_is_powerful_vassal_takeover_war"  value = 1 } }
+                                add_law_w_cooldown = law_voting_power_1
+                                add_law_w_cooldown = war_voting_power_1
+                                add_law_w_cooldown = succession_voting_power_1
+                                add_law_w_cooldown = succ_feudal_elective
+                            }
+                        }
                     }
                 }
             }
@@ -348,7 +347,6 @@ character_event = {
            if = {
                 limit = {
                     event_target:defender = { tier = EMPEROR }
-                    lower_real_tier_than = EMPEROR
                 }
                 primary_title = {
                     save_event_target_as = coa_base
@@ -367,18 +365,18 @@ character_event = {
                             copy_title_laws = yes
                             name = FF_SPLIT_TITLE
                         }
-                    }
-                }
-                primary_title = {
-                    set_coa = event_target:coa_base
-                    set_title_flag = fitna_fracture_can_be_merged
-                    save_event_target_as = new_title
-                    if = {
-                        limit = { is_variable_equal = { which = "cb_is_powerful_vassal_takeover_war"  value = 1 } }
-                        add_law_w_cooldown = law_voting_power_1
-                        add_law_w_cooldown = war_voting_power_1
-                        add_law_w_cooldown = succession_voting_power_1
-                        add_law_w_cooldown = succ_feudal_elective
+                        new_title = {
+                            set_coa = event_target:coa_base
+                            set_title_flag = fitna_fracture_can_be_merged
+                            save_event_target_as = created_title
+                            if = {
+                                limit = { is_variable_equal = { which = "cb_is_powerful_vassal_takeover_war"  value = 1 } }
+                                add_law_w_cooldown = law_voting_power_1
+                                add_law_w_cooldown = war_voting_power_1
+                                add_law_w_cooldown = succession_voting_power_1
+                                add_law_w_cooldown = succ_feudal_elective
+                            }
+                        }
                     }
                 }
             }
@@ -412,7 +410,7 @@ character_event = {
 
         # The two rulers get claims against each other
         event_target:defender = {
-            event_target:new_title = {
+            event_target:created_title = {
                 add_pressed_claim = PREV
             }
         }

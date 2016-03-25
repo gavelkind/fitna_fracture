@@ -6,7 +6,7 @@ show_civil_war_status_desc;Has been leading a revolt to replace [Root.GetHerHis]
 
 # Events
 FitnaFracture.91.title;A Revolt is Now a Realm;;;;;;;;;x
-FitnaFracture.91.desc;A protracted revolt in [old_title.GetBaseName] has ended in stalemate. The former rebels are now ruled by their intended liege, [new_ruler.GetFullName], in [new_title.GetBaseName].\n\nThe two sides have put down their arms, grudgingly signing a five-year pact of non-aggression.\n\nEach ruler has a claim on the other's primary title. Should one ruler come to hold both [old_title.GetBaseName] and [new_title.GetBaseName], they will be able to merge the two titles (even with Gavelkind).;;;;;;;;;x
+FitnaFracture.91.desc;A protracted revolt in [old_title.GetBaseName] has ended in stalemate. The former rebels are now ruled by their intended liege, [new_ruler.GetFullName], in [created_title.GetBaseName].\n\nThe two sides have put down their arms, grudgingly signing a five-year pact of non-aggression.\n\nEach ruler has a claim on the other's primary title. Should one ruler come to hold both [old_title.GetBaseName] and [created_title.GetBaseName], they will be able to merge the two titles (even with Gavelkind).;;;;;;;;;x
 FitnaFracture.91.opt1;This peace may not last long.;;;;;;;;;x
 
 FitnaFracture.100.title;A Monarchy Dissolved;;;;;;;;;x
