@@ -28,7 +28,7 @@ ff_is_fracturing_cb_trigger = {
             # Reasoning is that liege would surrender to these if the entire realm were under threat.
 
         }
-    }
+     }
 }
 
 
@@ -47,7 +47,10 @@ ff_is_fracturing_attacker_trigger = {
         ff_is_fracturing_cb_trigger = yes
         attacker = {
             character = PREV
-            # in_revolt = yes  # Ugly tooltip. Not needed with the current set of CBs above, which are all limited to revolts.
+
+            # This shouldn't be necessary, given the CBs listed above, but somehow a
+            # "claim" war can trip the "using_cb = other_claim_on_liege" condition???
+            in_revolt = yes
         }
         defender = {
             ff_is_fracturing_defender_trigger = yes
